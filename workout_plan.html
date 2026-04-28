@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hockey Fitness Plan</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e0e0e0; padding: 16px; max-width: 600px; margin: 0 auto; }
+  h1 { font-size: 1.4rem; color: #fff; text-align: center; margin-bottom: 4px; }
+  .subtitle { text-align: center; color: #888; font-size: 0.85rem; margin-bottom: 20px; }
+  .day-card { background: #1a1d27; border-radius: 12px; padding: 16px; margin-bottom: 16px; border-left: 4px solid #3b82f6; }
+  .day-card.thursday { border-left-color: #ef4444; }
+  .day-card.saturday { border-left-color: #22c55e; }
+  .day-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+  .day-name { font-size: 1.1rem; font-weight: 700; color: #fff; }
+  .day-focus { font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+  .section-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; color: #555; margin: 14px 0 8px 0; font-weight: 600; }
+  .warmup { font-size: 0.85rem; color: #aaa; line-height: 1.5; margin-bottom: 8px; padding: 8px 10px; background: #12141c; border-radius: 6px; }
+  .exercise { display: flex; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid #252830; }
+  .exercise:last-child { border-bottom: none; }
+  .ex-num { min-width: 24px; height: 24px; background: #252830; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; color: #888; margin-right: 10px; margin-top: 2px; }
+  .ex-details { flex: 1; }
+  .ex-name { font-weight: 600; font-size: 0.95rem; color: #e8e8e8; }
+  .ex-prescription { font-size: 0.85rem; color: #3b82f6; margin-top: 2px; }
+  .thursday .ex-prescription { color: #ef4444; }
+  .saturday .ex-prescription { color: #22c55e; }
+  .ex-note { font-size: 0.78rem; color: #777; margin-top: 2px; font-style: italic; }
+  .rest-tag { font-size: 0.7rem; color: #555; margin-top: 2px; }
+  .conditioning-box { background: #12141c; border-radius: 8px; padding: 12px; margin-top: 8px; }
+  .conditioning-box .ex-name { color: #22c55e; }
+  .conditioning-box p { font-size: 0.85rem; color: #aaa; margin-top: 4px; line-height: 1.4; }
+  .recovery { background: #1a1d27; border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; border-left: 4px solid #a855f7; }
+  .recovery-title { font-weight: 700; color: #a855f7; font-size: 0.9rem; margin-bottom: 6px; }
+  .recovery p { font-size: 0.85rem; color: #aaa; line-height: 1.5; }
+  .week-overview { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-bottom: 20px; }
+  .week-day { text-align: center; padding: 8px 2px; border-radius: 6px; background: #1a1d27; }
+  .week-day .label { font-size: 0.6rem; text-transform: uppercase; color: #555; letter-spacing: 1px; }
+  .week-day .activity { font-size: 0.65rem; color: #aaa; margin-top: 4px; font-weight: 600; }
+  .week-day.active { background: #1e2433; }
+  .week-day.hockey .activity { color: #f59e0b; }
+  .week-day.gym .activity { color: #3b82f6; }
+  .week-day.rest .activity { color: #555; }
+  .progression { background: #1a1d27; border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; border-left: 4px solid #f59e0b; }
+  .progression-title { font-weight: 700; color: #f59e0b; font-size: 0.9rem; margin-bottom: 6px; }
+  .progression p { font-size: 0.85rem; color: #aaa; line-height: 1.5; }
+</style>
+</head>
+<body>
+  <h1>🏒 Hockey Fitness Plan</h1>
+  <p class="subtitle">3-Day Gym Split · Beer League Performance · 45 Min Sessions</p>
+
+  <div class="week-overview">
+    <div class="week-day hockey"><div class="label">Sun</div><div class="activity">Hockey</div></div>
+    <div class="week-day rest"><div class="label">Mon</div><div class="activity">Rest</div></div>
+    <div class="week-day gym active"><div class="label">Tue</div><div class="activity">Plyo</div></div>
+    <div class="week-day hockey"><div class="label">Wed</div><div class="activity">Hockey</div></div>
+    <div class="week-day gym active"><div class="label">Thu</div><div class="activity">Legs</div></div>
+    <div class="week-day rest"><div class="label">Fri</div><div class="activity">Rest</div></div>
+    <div class="week-day gym active"><div class="label">Sat</div><div class="activity">Upper</div></div>
+  </div>
+
+  <!-- TUESDAY -->
+  <div class="day-card tuesday">
+    <div class="day-name">Tuesday</div>
+    <div class="day-focus">Plyometrics + Hockey Athleticism</div>
+
+    <div class="section-label">Warm-up · 5 min</div>
+    <div class="warmup">Foam roll hip flexors & T-spine · Lateral band walks ×10/side · Bodyweight squats ×8</div>
+
+    <div class="section-label">Plyometrics</div>
+
+    <div class="exercise">
+      <div class="ex-num">1</div>
+      <div class="ex-details">
+        <div class="ex-name">Box Jumps</div>
+        <div class="ex-prescription">4 × 5</div>
+        <div class="ex-note">Step down, full reset between reps</div>
+        <div class="rest-tag">90 sec rest</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <div class="ex-num">2</div>
+      <div class="ex-details">
+        <div class="ex-name">Lateral Skater Jumps</div>
+        <div class="ex-prescription">4 × 6/side</div>
+        <div class="ex-note">Stick each landing, 1 sec pause</div>
+        <div class="rest-tag">90 sec rest</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <div class="ex-num">3</div>
+      <div class="ex-details">
+        <div class="ex-name">Broad Jumps</div>
+        <div class="ex-prescription">3 × 5</div>
+        <div class="ex-note">Reset, stand tall between reps</div>
+        <div class="rest-tag">90 sec rest</div>
+      </div>
+    </div>
+
+    <div class="section-label">Strength & Core</div>
+
+    <div class="exercise">
+      <div class="ex-num">4</div>
+      <div class="ex-details">
+        <div class="ex-name">Cable Row</div>
+        <div class="ex-prescription">3 × 10–12</div>
+        <div class="rest-tag">60 sec rest</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <div class="ex-num">5</div>
+      <div class="ex-details">
+        <div class="ex-name">Kettlebell Swings</div>
+        <div class="ex-prescription">3 × 12</div>
+        <div class="rest-tag">60 sec rest</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <div class="ex-num">6</div>
+      <div class="ex-details">
+        <div class="ex-name">Pallof Press</div>
+        <div class="ex-prescription">3 × 10/side</div>
+        <div class="rest-tag">45 sec rest</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <div class="ex-num">7</div>
+      <div class="ex-details">
+        <div class="ex-name">Plank Hold</div>
+        <div class="ex-prescription">3 × 30 sec</div>
+        <div class="rest-tag">45 sec rest</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THURSDAY -->
+  <div class="day-card thursday">
+    <div class="day-name">Thursday</div>
+    <div class="day-focus">Lower Body · Heavy Day</div>
+
+    <div class="section-label">Warm-up · 5 min</div>
+    <div class="warmup">Foam roll quads & glutes · Hip flexor stretch · Bodyweight squats ×10 · Glute bridges ×10</div>
+
+    <div class="section-label">Strength</div>
+
+    <div class="exercise">
+      <div class="ex-num">1</div>
+      <div class="ex-details">
+        <div class="ex-name">Trap Bar Deadlift</div>
+        <div class="ex-prescription">4 × 5 heavy</div>
+        <div class="ex-note">Explosive intent every rep</div>
+        <div class="rest-tag">2 min rest</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <div class="ex-num">2</div>
+      <div class="ex-details">
+        <div class="ex-name">Bulgarian Split Squat</div>
+        <div class="ex-prescription">3 × 8/side</div>
+        <div class="rest-tag">90 sec rest</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <div class="ex-num">3</div>
+      <div class="ex-details">
+        <div class="ex-name">Hack Squat</div>
+        <div class="ex-prescription">3 × 5 heavy</div>
+        <div class="rest-tag">90 sec rest</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <div class="ex-num">4</div>
+      <div class="ex-details">
+        <div class="ex-name">Leg Curl</div>
+        <div class="ex-prescription">3 × 10</div>
+        <div class="rest-tag">60 sec rest</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <div class="ex-num">5</div>
+      <div class="ex-details">
+        <div class="ex-name">Calf Raises</div>
+        <div class="ex-prescription">3 × 15</div>
+        <div class="rest-tag">60 sec rest</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <div class="ex-num">6</div>
+      <div class="ex-details">
+        <div class="ex-name">Farmer's Walk</div>
+        <div class="ex-prescription">3 × 40 yards</div>
+        <div class="ex-note">Heavy as you can grip</div>
+        <div class="rest-tag">60 sec rest</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SATURDAY -->
+  <div class="day-card saturday">
+    <div class="day-name">Saturday</div>
+    <div class="day-focus">Upper Body + Conditioning</div>
+
+    <div class="section-label">Warm-up · 5 min</div>
+    <div class="warmup">Band pull-aparts ×15 · Arm circles · Light shoulder press ×8</div>
+
+    <div class="section-label">Strength</div>
+
+    <div class="exercise">
+      <div class="ex-num">1</div>
+      <div class="ex-details">
+        <div class="ex-name">Barbell Bench Press</div>
+        <div class="ex-prescription">4 × 6–8</div>
+        <div class="rest-tag">90 sec rest</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <div class="ex-num">2</div>
+      <div class="ex-details">
+        <div class="ex-name">Lat Pulldown</div>
+        <div class="ex-prescription">4 × 8–10</div>
+        <div class="rest-tag">90 sec rest</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <div class="ex-num">3</div>
+      <div class="ex-details">
+        <div class="ex-name">Face Pulls</div>
+        <div class="ex-prescription">3 × 15</div>
+        <div class="rest-tag">60 sec rest</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <div class="ex-num">4</div>
+      <div class="ex-details">
+        <div class="ex-name">Cable Tricep Extension</div>
+        <div class="ex-prescription">3 × 12</div>
+        <div class="rest-tag">60 sec rest</div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <div class="ex-num">5</div>
+      <div class="ex-details">
+        <div class="ex-name">Barbell or DB Curl</div>
+        <div class="ex-prescription">3 × 10–12</div>
+        <div class="rest-tag">60 sec rest</div>
+      </div>
+    </div>
+
+    <div class="section-label">Conditioning · 12–15 min</div>
+    <div class="conditioning-box">
+      <div class="ex-name">Assault Bike or Rower Intervals</div>
+      <p>30 sec all-out / 60 sec recovery × 8–10 rounds<br><em>Mimics hockey shift-to-bench ratio</em></p>
+    </div>
+  </div>
+
+  <!-- RECOVERY -->
+  <div class="recovery">
+    <div class="recovery-title">🧊 Recovery</div>
+    <p>Sauna + cold plunge post-workout all three days. Thursday after heavy legs is the most important recovery session of the week.</p>
+  </div>
+
+  <!-- PROGRESSION -->
+  <div class="progression">
+    <div class="progression-title">📈 Progression</div>
+    <p>Add weight or a rep every 1–2 weeks on big lifts (trap bar DL, bench, hack squat). Plyos stay at the same height/distance — focus on explosiveness and form, not load.</p>
+  </div>
+
+</body>
+</html>
