@@ -38,6 +38,7 @@
   .week-day .label { font-size: 0.6rem; text-transform: uppercase; color: #555; letter-spacing: 1px; }
   .week-day .activity { font-size: 0.65rem; color: #aaa; margin-top: 4px; font-weight: 600; }
   .week-day.active { background: #1e2433; }
+  .week-day a { text-decoration: none; color: inherit; display: block; }
   .week-day.hockey .activity { color: #f59e0b; }
   .week-day.gym .activity { color: #3b82f6; }
   .week-day.rest .activity { color: #555; }
@@ -53,15 +54,15 @@
   <div class="week-overview">
     <div class="week-day hockey"><div class="label">Sun</div><div class="activity">Hockey</div></div>
     <div class="week-day rest"><div class="label">Mon</div><div class="activity">Rest</div></div>
-    <div class="week-day gym active"><div class="label">Tue</div><div class="activity">Plyo</div></div>
+    <div class="week-day gym active" onclick="document.getElementById('tuesday').scrollIntoView({behavior:'smooth'})" style="cursor:pointer"><div class="label">Tue</div><div class="activity">Plyo</div></div>
     <div class="week-day hockey"><div class="label">Wed</div><div class="activity">Hockey</div></div>
-    <div class="week-day gym active"><div class="label">Thu</div><div class="activity">Legs</div></div>
+    <div class="week-day gym active" onclick="document.getElementById('thursday').scrollIntoView({behavior:'smooth'})" style="cursor:pointer"><div class="label">Thu</div><div class="activity">Legs</div></div>
     <div class="week-day rest"><div class="label">Fri</div><div class="activity">Rest</div></div>
-    <div class="week-day gym active"><div class="label">Sat</div><div class="activity">Upper</div></div>
+    <div class="week-day gym active" onclick="document.getElementById('saturday').scrollIntoView({behavior:'smooth'})" style="cursor:pointer"><div class="label">Sat</div><div class="activity">Upper</div></div>
   </div>
 
   <!-- TUESDAY -->
-  <div class="day-card tuesday">
+  <div id="tuesday" class="day-card tuesday">
     <div class="day-name">Tuesday</div>
     <div class="day-focus">Plyometrics + Hockey Athleticism</div>
 
@@ -140,7 +141,7 @@
   </div>
 
   <!-- THURSDAY -->
-  <div class="day-card thursday">
+  <div id="thursday" class="day-card thursday">
     <div class="day-name">Thursday</div>
     <div class="day-focus">Lower Body · Heavy Day</div>
 
@@ -207,7 +208,7 @@
   </div>
 
   <!-- SATURDAY -->
-  <div class="day-card saturday">
+  <div id="saturday" class="day-card saturday">
     <div class="day-name">Saturday</div>
     <div class="day-focus">Upper Body + Conditioning</div>
 
