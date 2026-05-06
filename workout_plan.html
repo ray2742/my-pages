@@ -33,7 +33,7 @@
   .recovery { background: #1a1d27; border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; border-left: 4px solid #a855f7; }
   .recovery-title { font-weight: 700; color: #a855f7; font-size: 0.9rem; margin-bottom: 6px; }
   .recovery p { font-size: 0.85rem; color: #aaa; line-height: 1.5; }
-  .week-overview { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-bottom: 20px; }
+  .week-overview { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; position: sticky; top: 0; z-index: 10; background: #0f1117; padding: 10px 0; margin: 0 -16px 20px; padding-left: 16px; padding-right: 16px; }
   .week-day { text-align: center; padding: 8px 2px; border-radius: 6px; background: #1a1d27; }
   .week-day .label { font-size: 0.6rem; text-transform: uppercase; color: #555; letter-spacing: 1px; }
   .week-day .activity { font-size: 0.65rem; color: #aaa; margin-top: 4px; font-weight: 600; }
@@ -41,6 +41,8 @@
   .week-day a { text-decoration: none; color: inherit; display: block; }
   .week-day.hockey .activity { color: #f59e0b; }
   .week-day.gym .activity { color: #3b82f6; }
+  .week-day.gym.thursday .activity { color: #ef4444; }
+  .week-day.gym.saturday .activity { color: #22c55e; }
   .week-day.rest .activity { color: #555; }
   .progression { background: #1a1d27; border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; border-left: 4px solid #f59e0b; }
   .progression-title { font-weight: 700; color: #f59e0b; font-size: 0.9rem; margin-bottom: 6px; }
@@ -54,11 +56,11 @@
   <div class="week-overview">
     <div class="week-day hockey"><div class="label">Sun</div><div class="activity">Hockey</div></div>
     <div class="week-day rest"><div class="label">Mon</div><div class="activity">Rest</div></div>
-    <div class="week-day gym active" onclick="document.getElementById('tuesday').scrollIntoView({behavior:'smooth'})" style="cursor:pointer"><div class="label">Tue</div><div class="activity">Plyo</div></div>
+    <div class="week-day gym active" onclick="scrollToDay('tuesday')" style="cursor:pointer"><div class="label">Tue</div><div class="activity">Plyo</div></div>
     <div class="week-day hockey"><div class="label">Wed</div><div class="activity">Hockey</div></div>
-    <div class="week-day gym active" onclick="document.getElementById('thursday').scrollIntoView({behavior:'smooth'})" style="cursor:pointer"><div class="label">Thu</div><div class="activity">Legs</div></div>
+    <div class="week-day gym thursday active" onclick="scrollToDay('thursday')" style="cursor:pointer"><div class="label">Thu</div><div class="activity">Legs</div></div>
     <div class="week-day rest"><div class="label">Fri</div><div class="activity">Rest</div></div>
-    <div class="week-day gym active" onclick="document.getElementById('saturday').scrollIntoView({behavior:'smooth'})" style="cursor:pointer"><div class="label">Sat</div><div class="activity">Upper</div></div>
+    <div class="week-day gym saturday active" onclick="scrollToDay('saturday')" style="cursor:pointer"><div class="label">Sat</div><div class="activity">Upper</div></div>
   </div>
 
   <!-- TUESDAY -->
@@ -281,5 +283,13 @@
     <p>Add weight or a rep every 1–2 weeks on big lifts (trap bar DL, bench, hack squat). Plyos stay at the same height/distance — focus on explosiveness and form, not load.</p>
   </div>
 
+  <script>
+    function scrollToDay(id) {
+      var el = document.getElementById(id);
+      var bar = document.querySelector('.week-overview');
+      var offset = el.getBoundingClientRect().top + window.scrollY - bar.offsetHeight - 12;
+      window.scrollTo({ top: offset, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
